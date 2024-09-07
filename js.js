@@ -14,23 +14,29 @@ document.querySelector('.navbar-toggler-icon').addEventListener('click', functio
     document.querySelector('.login-button').style.display = 'none';
 })
 
-
 document.querySelector('.btn-primary').addEventListener('click', function(event){
-    if(document.querySelectorAll('.form-control')[0].value === ""){
-       alert('아이디를 입력하세요');
+
+    let 이메일입력값 = document.querySelectorAll('.form-control')[0].value;
+    let 비밀번호입력값 = document.querySelectorAll('.form-control')[1].value;
+
+    if(이메일입력값 == ""){
+       alert('이메일을 입력하세요');
        event.preventDefault();
-    }else if(document.querySelectorAll('.form-control')[1].value === ""){
+    }else if( 비밀번호입력값 == ""){
         alert('비밀번호를 입력하세요');
         event.preventDefault();
         return
-    }
-
-    if(document.querySelectorAll('.form-control')[1].value.length < 6){
+    }else if(비밀번호입력값.length < 6){
         alert('비밀번호를 6자 이상으로 입력하세요');
         event.preventDefault();
         return;
     }
-});
+    
+    if( !/\S+@\S+\.\S+/.test(이메일입력값)){
+        alert('이메일 형식으로 입력해주세요')
+        event.preventDefault();
+        }
+    });
 
 let clickCount = 0;
 document.querySelector('.badge').addEventListener('click', function(){

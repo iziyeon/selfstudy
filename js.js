@@ -20,20 +20,24 @@ document.querySelector('.btn-primary').addEventListener('click', function(event)
     let 비밀번호입력값 = document.querySelectorAll('.form-control')[1].value;
 
     if(이메일입력값 == ""){
-       alert('이메일을 입력하세요');
+       alert('이메일을 입력하세요.');
        event.preventDefault();
     }else if( 비밀번호입력값 == ""){
-        alert('비밀번호를 입력하세요');
+        alert('비밀번호를 입력하세요.');
         event.preventDefault();
         return
     }else if(비밀번호입력값.length < 6){
-        alert('비밀번호를 6자 이상으로 입력하세요');
+        alert('비밀번호를 6자 이상으로 입력하세요.');
         event.preventDefault();
         return;
     }
     
     if( !/\S+@\S+\.\S+/.test(이메일입력값)){
-        alert('이메일 형식으로 입력해주세요')
+        alert('이메일 형식으로 입력해주세요.')
+        event.preventDefault();
+        }else if(!/[A-Z]/.test(이메일입력값)){
+        event.preventDefault();
+        alert('영어 대문자를 1개 이상 포함해주세요.')
         event.preventDefault();
         }
     });

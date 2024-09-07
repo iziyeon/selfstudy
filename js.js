@@ -77,3 +77,18 @@ document.querySelectorAll('.slide-2')[0].addEventListener('click', function(){
 document.querySelectorAll('.slide-3')[0].addEventListener('click', function(){
     document.querySelectorAll('.slide-container')[0].style.transform = "translateX(-200vw)";
 })
+
+let 지금보이는사진 = 1;
+document.querySelector('.next').addEventListener('click', function(){
+    if(지금보이는사진 == 1){
+        document.querySelectorAll('.slide-container')[0].style.transform = "translateX(-100vw)"
+        지금보이는사진++;
+    }else if(지금보이는사진 == 2){
+        document.querySelectorAll('.slide-container')[0].style.transform = "translateX(-200vw)"
+        지금보이는사진++;
+    }else if(지금보이는사진 == 3){
+        document.querySelectorAll('.slide-container')[0].style.transform = "translateX(0vw)";
+        지금보이는사진 = 지금보이는사진 - 2
+    }
+    }
+)

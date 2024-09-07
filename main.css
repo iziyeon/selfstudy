@@ -32,13 +32,21 @@
 .login-button{
   display: block;
 }
-
-
+.slide-container {
+  width: 300vw;
+  transition: all 1s;
+  /* transform: translateX(-100vw); */
+} 
+.slide-box {
+  width: 100vw;
+  float: left;
+}
+.slide-box img {
+  width: 100%;
+} 
 .main-bg{
   background-color: lightblue;
   height: 100px;
-  margin : auto;
-  padding: auto;
 }
 
 .alert-danger{

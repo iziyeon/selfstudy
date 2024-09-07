@@ -66,4 +66,14 @@ function 남은초확인(){
 function 이벤트삭제(){
     document.querySelector('.alert-danger').style.visibility = "hidden";
 }
+document.querySelectorAll('.slide-1')[0].addEventListener('click', function(){
+    document.querySelectorAll('.slide-container')[0].style.transform = "translateX(0vw)";
+})
 
+document.querySelectorAll('.slide-2')[0].addEventListener('click', function(){
+    document.querySelectorAll('.slide-container')[0].style.transform = "translateX(-100vw)";
+})
+
+document.querySelectorAll('.slide-3')[0].addEventListener('click', function(){
+    document.querySelectorAll('.slide-container')[0].style.transform = "translateX(-200vw)";
+})

@@ -66,29 +66,24 @@ function 남은초확인(){
 function 이벤트삭제(){
     document.querySelector('.alert-danger').style.visibility = "hidden";
 }
-document.querySelectorAll('.slide-1')[0].addEventListener('click', function(){
-    document.querySelectorAll('.slide-container')[0].style.transform = "translateX(0vw)";
-})
 
-document.querySelectorAll('.slide-2')[0].addEventListener('click', function(){
-    document.querySelectorAll('.slide-container')[0].style.transform = "translateX(-100vw)";
-})
 
-document.querySelectorAll('.slide-3')[0].addEventListener('click', function(){
-    document.querySelectorAll('.slide-container')[0].style.transform = "translateX(-200vw)";
-})
 
-let 지금보이는사진 = 1;
+let 지금보이는사진 = 0;
+let 슬라이드버튼 =  document.querySelectorAll('.slide-btn')
+
+for(let i = 0; i < 슬라이드버튼.length; i++){
+    슬라이드버튼[i].addEventListener('click', function(){
+        document.querySelectorAll('.slide-container')[0].style.transform = `translateX(-${i * 100}vw)`;
+        지금보이는사진 = i;
+    })
+   }
+
 document.querySelector('.next').addEventListener('click', function(){
-    if(지금보이는사진 == 1){
-        document.querySelectorAll('.slide-container')[0].style.transform = "translateX(-100vw)"
-        지금보이는사진++;
-    }else if(지금보이는사진 == 2){
-        document.querySelectorAll('.slide-container')[0].style.transform = "translateX(-200vw)"
-        지금보이는사진++;
-    }else if(지금보이는사진 == 3){
-        document.querySelectorAll('.slide-container')[0].style.transform = "translateX(0vw)";
-        지금보이는사진 = 지금보이는사진 - 2
+    지금보이는사진++
+    if(지금보이는사진 >= 슬라이드버튼.length){
+        지금보이는사진 = 0;
     }
-    }
-)
+    document.querySelectorAll('.slide-container')[0].style.transform = `translateX(-${지금보이는사진 * 100}vw)`;
+});
+

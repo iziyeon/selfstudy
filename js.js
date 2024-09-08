@@ -87,3 +87,11 @@ document.querySelector('.next').addEventListener('click', function(){
     document.querySelectorAll('.slide-container')[0].style.transform = `translateX(-${지금보이는사진 * 100}vw)`;
 });
 
+document.querySelector('.prev').addEventListener('click', function(){
+    if(지금보이는사진 == 0){
+        지금보이는사진 = 슬라이드버튼.length -1
+    }else{
+        지금보이는사진--
+    }
+    document.querySelectorAll('.slide-container')[0].style.transform = `translateX(-${지금보이는사진 * 100}vw)`;
+});

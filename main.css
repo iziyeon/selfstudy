@@ -44,10 +44,22 @@
   width: 100%;
 } 
 .main-bg{
-  background-color: lightblue;
+  background-color: lightgrey;
+  top : 70px;
   height: 100px;
+  position: relative;
 }
 
 .alert-danger{
   visibility : visible;
+}
+
+.navbar {
+  position : fixed;
+  width : 100%;
+  z-index : 5
+}
+.navbar-brand {
+  font-size : 30px;
+  transition : all 1s;
 }

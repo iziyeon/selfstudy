@@ -1,5 +1,5 @@
-document.getElementsByClassName('navbar-toggler')[0].addEventListener('click',function(){
-    document.getElementsByClassName('list-group')[0].classList.toggle('show');
+document.querySelector('.navbar-toggler').addEventListener('click',function(){
+    document.querySelector('.list-group').classList.toggle('show');
     })
 
 document.querySelector('.login-button').addEventListener('click', function(){
@@ -10,9 +10,8 @@ document.querySelector('#close').addEventListener('click', function(){
     document.querySelector('.black-bg').classList.remove('show-modal');
 })
 
-document.querySelector('.navbar-toggler-icon').addEventListener('click', function(){
-    document.querySelector('.login-button').style.display = 'none';
-})
+
+
 
 document.querySelector('.btn-primary').addEventListener('click', function(event){
 

@@ -94,3 +94,11 @@ document.querySelector('.prev').addEventListener('click', function(){
     }
     document.querySelectorAll('.slide-container')[0].style.transform = `translateX(-${지금보이는사진 * 100}vw)`;
 });
+
+let 검은배경 = document.querySelector('.black-bg')
+
+검은배경.addEventListener('click', function(e){
+    if(e.target == 검은배경) //e.target사용하지 않으면 이벤트버블링 발생함.
+        {검은배경.classList.remove('show-modal');
+        }
+})

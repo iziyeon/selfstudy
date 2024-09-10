@@ -17,9 +17,31 @@ document.querySelector('.car-title').innerHTML = car2.name;
 document.querySelector('.car-price').innerHTML = car2.price[0]
 
 let 선택 = document.querySelectorAll('.form-select');
-선택[0].addEventListener('input', function(){
-    if( 선택[0].value == '셔츠'){
-        선택[1].classList.remove("form-hide");
+let hat = ['S', 'M', 'L']
+let shirts = [90, 95, 100, 105]
+let pants = [26, 28, 30, 32]
+
+
+선택[0].addEventListener('input', function () {
+
+    let 사이즈 = document.querySelectorAll('.size');
+    선택[1].classList.remove("form-hide")
+    
+    if (선택[0].value == '모자') {
+        선택[1].innerHTML = ''
+        hat.forEach(function(a){
+        선택[1].innerHTML = 선택[1].innerHTML + `<option>${a}</option>`;
+        })
+    } else if (선택[0].value == '셔츠') {
+        선택[1].innerHTML = ''
+        shirts.forEach(function(a){
+        선택[1].innerHTML = 선택[1].innerHTML + `<option>${a}</option>`;
+        })
+    } else if (선택[0].value == '바지') {
+        선택[1].innerHTML = ''
+        pants.forEach(function(a){
+        선택[1].innerHTML = 선택[1].innerHTML + `<option>${a}</option>`;
+        })
     }
 });
 
